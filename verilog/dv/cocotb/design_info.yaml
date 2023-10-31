@@ -1,0 +1,37 @@
+# yaml file contain general design information that would mostly need to be updated in the first run only 
+
+#eg CARAVEL_ROOT: "/usr/Desktop/caravel_project/caravel/" 
+#like repo https://github.com/efabless/caravel
+
+CARAVEL_ROOT: /home/rady/caravel_proj/GF/caravel_user_project/caravel-gf180mcu
+
+#eg MCW_ROOT: "/usr/Desktop/caravel_project/caravel_mgmt_soc_litex/" 
+#like repo https://github.com/efabless/caravel_mgmt_soc_litex 
+
+MCW_ROOT: /home/rady/caravel_proj/GF/caravel_user_project/caravel_mgmt_soc_gf180mcu
+
+#eg USER_PROJECT_ROOT: "/usr/Desktop/caravel_project/caravel_user_project/" 
+#like repo https://github.com/efabless/caravel_user_project
+USER_PROJECT_ROOT: /home/rady/caravel_proj/GF/caravel_user_project/
+
+# USER_PROJECT_ROOT: None
+# USER_PROJECT_ROOT: None
+
+
+
+#eg PDK_ROOT: "/usr/Desktop/caravel_project/pdk/" 
+#exported by volare
+PDK_ROOT: /home/rady/caravel/files4vcs/pdk
+
+#eg PDK: "sky130A"
+PDK: gf180mcuD
+#PDK: gf180mcuC
+
+#clock in ns
+clk: 30
+
+# true when caravan are simulated instead of caravel
+caravan: false
+
+# optional email address to send the results to 
+emailto: [ None]

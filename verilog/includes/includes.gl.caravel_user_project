@@ -1,0 +1,58 @@
+###########################################################
+## VIP
+###########################################################
+-v $(VERILOG_PATH)/dv/vip/tbuart.v
+-v $(VERILOG_PATH)/dv/vip/spiflash.v
+-v $(VERILOG_PATH)/dv/vip/wb_rw_test.v
+-v $(VERILOG_PATH)/gl/gf180_ram_512x8_wrapper.v
+
+###########################################################
+## Must stay in RTL regardless of the type of simulation
+###########################################################
+
+-v $(CARAVEL_PATH)/rtl/defines.v 
+-v $(VERILOG_PATH)/rtl/defines.v 
+-v $(CARAVEL_PATH)/rtl/user_defines.v 
+-v $(CARAVEL_PATH)/rtl/simple_por.v
+
+###########################################################
+## These blocks are either synthesized or STD cell based 
+## Manually designed blocks
+###########################################################							     
+-v $(CARAVEL_PATH)/gl/gpio_defaults_block.v	     
+-v $(CARAVEL_PATH)/gl/spare_logic_block.v	     
+-v $(CARAVEL_PATH)/gl/housekeeping.v		     
+-v $(CARAVEL_PATH)/gl/user_id_programming.v	   
+-v $(CARAVEL_PATH)/gl/mprj_io_buffer.v	   
+-v $(CARAVEL_PATH)/gl/caravel.v 		     
+-v $(USER_PROJECT_VERILOG)/gl/caravel_core.v 
+
+###########################################################
+## These blocks are manually designed 		
+###########################################################
+-v $(CARAVEL_PATH)/gl/chip_io.v 
+-v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_00b.v   
+-v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_007.v   
+-v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_009.v   
+-v $(USER_PROJECT_VERILOG)/gl/gpio_defaults_block_087.v 
+
+# Caravel user project includes	     
+-v $(USER_PROJECT_VERILOG)/rtl/user_defines.v
+
+-v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v	     
+-v $(USER_PROJECT_VERILOG)/gl/user_proj_example.v     
+
+## copy right files 
+-v $(CARAVEL_PATH)/rtl/copyright_block.v		     
+-v $(CARAVEL_PATH)/rtl/user_id_textblock.v		     
+-v $(CARAVEL_PATH)/rtl/caravel_logo.v	     
+-v $(CARAVEL_PATH)/rtl/caravel_motto.v		     
+-v $(CARAVEL_PATH)/rtl/open_source.v
+
+###########################################################
+# STD CELLS - they need to be below the defines.v files 
+###########################################################
+ -v $(PDK_ROOT)/$(PDK)/libs.ref/gf180mcu_fd_io/verilog/gf180mcu_fd_io.v
+ -v $(PDK_ROOT)/$(PDK)/libs.ref/gf180mcu_fd_sc_mcu7t5v0/verilog/primitives.v
+ -v $(PDK_ROOT)/$(PDK)/libs.ref/gf180mcu_fd_sc_mcu7t5v0/verilog/gf180mcu_fd_sc_mcu7t5v0.v
+ -v $(PDK_ROOT)/$(PDK)/libs.ref/gf180mcu_fd_ip_sram/verilog/gf180mcu_fd_ip_sram__sram512x8m8wm1.v
