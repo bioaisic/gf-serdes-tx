@@ -79,7 +79,8 @@ endif
 
 ifeq ($(PDK),gf180mcuC)
 
-	MPW_TAG ?= gfmpw-0b
+	# MPW_TAG ?= gfmpw-0b
+	MPW_TAG ?= gfmpw-1a
 	CARAVEL_NAME := caravel
 	CARAVEL_REPO := https://github.com/efabless/caravel-gf180mcu
 	CARAVEL_TAG := $(MPW_TAG)
